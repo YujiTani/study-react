@@ -6,7 +6,7 @@ import { Footer } from '@/components/Footer'
 import { useCallback } from 'react'
 
 export default function Home() {
-  useCallback(function handleClick(e) {
+  const handleClick = useCallback(function (e) {
     console.log(e.target.href) // "/about"
     e.preventDefault()
   }, [])
