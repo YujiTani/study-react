@@ -17,13 +17,11 @@ export function Main(props) {
       if (count > 9) {
         return
       }
-      setCount((count) => count + 1)
-    },
-    [count]
-  )
+    setCount((prevCount) => prevCount + 1)
+  }, [count])
 
   const handleDisplay = useCallback(() => {
-    setIsShow((isShow) => !isShow)
+    setIsShow((prevIsShow) => !prevIsShow)
   }, [])
 
   const handleChange = useCallback((e) => {
