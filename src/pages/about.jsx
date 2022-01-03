@@ -5,13 +5,14 @@ import { Main } from '@/components/Main'
 import { Footer } from '@/components/Footer'
 import { useCounter } from '@/libs/utils/useCounter'
 import { useInputArray } from '@/libs/utils/useInputArray'
-import { useBgLightBlue } from '@/libs/utils/useBgLightBlue'
+import { useBgColor } from '@/libs/utils/useBgColor'
 
-export default function About() {
+export default function About(props) {
+  console.log(props)
   const { count, handleCount } = useCounter()
   const { text, isShow, array, handleDisplay, handleChange, handleAdd } =
     useInputArray()
-  useBgLightBlue()
+  useBgColor()
 
   return (
     <div className={styles.container}>

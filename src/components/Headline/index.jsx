@@ -5,7 +5,7 @@ export function Headline(props) {
     <div>
       <h1 className={classes.title}>{`hello ${props.page} page`}</h1>
       <p className={classes.description}>
-        Get started by editing {props.children}
+        Get started by editing {props.children} リンクの数は{props.items.length}
       </p>
     </div>
   )
