@@ -1,7 +1,8 @@
 import { usePosts } from '@/libs/utils/usePost'
+import Link from 'next/link'
 
 export function Posts() {
-  const { data, error, isLoading, isEmpty } = usePosts
+  const { data, error, isLoading, isEmpty } = usePosts()
 
   if (isLoading) {
     return <div>ローディング中</div>
@@ -19,7 +20,11 @@ export function Posts() {
     <div>
       <ol>
         {data.map((post) => {
-          return <li key={post.id}>{post.title}</li>
+          return (
+            <li key={post.id}>
+              <Link href={`/post/${post.id}`}>{post.title}</Link>
+            </li>
+          )
         })}
       </ol>
     </div>

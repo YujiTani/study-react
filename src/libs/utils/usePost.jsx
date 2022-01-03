@@ -21,6 +21,6 @@ export const usePosts = () => {
     data,
     error,
     isLoading: !error && !data,
-    isEmpty: data.length === 0,
+    isEmpty: data && data.length === 0,
   }
 }
