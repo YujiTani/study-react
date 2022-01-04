@@ -1,4 +1,4 @@
-import { usePosts } from '@/libs/utils/usePost'
+import { usePosts } from '@/libs/utils/usePosts'
 import Link from 'next/link'
 
 export function Posts() {

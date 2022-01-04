@@ -8,7 +8,6 @@ import { useCallback, useEffect, useState } from 'react'
 import { Posts } from '@/components/Post'
 
 export default function Home(props) {
-  console.log(props)
   const { count, handleCount } = useCounter()
   const { text, isShow, array, handleDisplay, handleChange, handleAdd } =
     useInputArray()

@@ -8,7 +8,6 @@ import { useInputArray } from '@/libs/utils/useInputArray'
 import { useBgColor } from '@/libs/utils/useBgColor'
 
 export default function About(props) {
-  console.log(props)
   const { count, handleCount } = useCounter()
   const { text, isShow, array, handleDisplay, handleChange, handleAdd } =
     useInputArray()
