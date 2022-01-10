@@ -3,7 +3,7 @@ import styles from '@/styles/Home.module.css'
 import { Header } from '@/components/Header'
 import { usePost } from '@/libs/utils/usePost'
 
-const PostId = () => {
+const PostsId = () => {
   const { post, user, error, isLoading } = usePost()
 
   if (isLoading) {
@@ -26,4 +26,4 @@ const PostId = () => {
     </div>
   )
 }
-export default PostId
+export default PostsId
