@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
-import { Posts as PostsComponent } from '@/components/Post'
+import PostsComponent from '@/components/Post'
 
 const Posts = () => {
   return (
@@ -9,7 +9,7 @@ const Posts = () => {
         <title>Posts Page</title>
       </Head>
       <Header />
-      <PostsComponent />
+      <PostsComponent url={'https://jsonplaceholder.typicode.com/posts'} />
     </div>
   )
 }

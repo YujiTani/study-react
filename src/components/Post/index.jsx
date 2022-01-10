@@ -1,8 +1,8 @@
 import { usePosts } from '@/libs/utils/usePosts'
 import Link from 'next/link'
 
-export function Posts() {
-  const { data, error, isLoading, isEmpty } = usePosts()
+const Posts = (props) => {
+  const { data, error, isLoading, isEmpty } = usePosts(props.url)
 
   if (isLoading) {
     return <div>ローディング中</div>
@@ -30,3 +30,5 @@ export function Posts() {
     </div>
   )
 }
+
+export default Posts
