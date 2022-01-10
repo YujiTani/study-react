@@ -7,7 +7,7 @@ export function Header() {
       <Link href='/posts' prefetch={false}>
         posts
       </Link>
-      <Link href='/about'>about</Link>
+      <Link href='/'>index</Link>
     </header>
   )
 }
