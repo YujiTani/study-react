@@ -1,26 +1,17 @@
 import { Header } from '@/components/Header'
-import useSWR from 'swr'
-import { useRouter } from 'next/router'
 import Head from 'next/head'
-import { fetcher } from '@/utils/fetcher'
-
-const useUser = () => {
-  const router = useRouter()
-  const { data, error } = useSWR(
-    router.query.id
-      ? `https://jsonplaceholder.typicode.com/users/${router.query.id}`
-      : null,
-    fetcher
-  )
-  return {
-    data,
-    error,
-    isLoading: !data && !error,
-  }
-}
+import { useUser } from '@/libs/utils/useUser'
 
 const UserId = () => {
   const { data, error, isLoading } = useUser()
+
+  if (isLoading) {
+    return <div>ローディング中</div>
+  }
+
+  if (error) {
+    return <div>{error.message}</div>
+  }
 
   return (
     <div>

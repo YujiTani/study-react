@@ -1,27 +1,17 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
-import { fetcher } from '@/utils/fetcher'
-import { useRouter } from 'next/router'
-import useSWR from 'swr'
-
-const useComment = () => {
-  const router = useRouter()
-  const { data, error } = useSWR(
-    router.query.id
-      ? `https://jsonplaceholder.typicode.com/comments/${router.query.id}`
-      : null,
-    fetcher
-  )
-  return {
-    data,
-    error,
-    isLoading: !data && !error,
-  }
-}
+import { useComment } from '@/libs/utils/useComment'
 
 const CommentId = () => {
   const { data, error, isLoading } = useComment()
-  console.log(JSON.stringify(data))
+
+  if (isLoading) {
+    return <div>ローディング中</div>
+  }
+
+  if (error) {
+    return <div>{error.message}</div>
+  }
 
   return (
     <div>
