@@ -1,11 +1,10 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 import { Header } from '@/components/Header'
 import { Posts as PostsComponent } from '@/components/Post'
 
-export function Posts() {
+const Posts = () => {
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>Posts Page</title>
       </Head>

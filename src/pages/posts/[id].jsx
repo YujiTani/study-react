@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '@/styles/Home.module.css'
 import { Header } from '@/components/Header'
 import { usePost } from '@/libs/utils/usePost'
 
@@ -15,7 +14,7 @@ const PostsId = () => {
   }
 
   return (
-    <div className={styles.container}>
+    <div>
       <Head>
         <title>{post?.title}</title>
       </Head>
