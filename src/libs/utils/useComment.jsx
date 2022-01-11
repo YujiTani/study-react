@@ -1,18 +1,18 @@
-const { fetcher } = require('@/utils/fetcher')
-const { useRouter } = require('next/router')
-const { default: useSWR } = require('swr')
+import { fetcher } from '@/utils/fetcher'
+import { useRouter } from 'next/router'
+import useSWR from 'swr'
 
 export const useComment = () => {
   const router = useRouter()
-  const { data, error } = useSWR(
+  const { data: comment, error } = useSWR(
     router.query.id
       ? `https://jsonplaceholder.typicode.com/comments/${router.query.id}`
       : null,
     fetcher
   )
   return {
-    data,
+    comment,
     error,
-    isLoading: !data && !error,
+    isLoading: !comment && !error,
   }
 }

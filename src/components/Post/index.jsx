@@ -1,8 +1,8 @@
-import { usePosts } from '@/libs/utils/usePosts'
+import { usePosts } from '@/libs/utils/useFetchArray'
 import Link from 'next/link'
 
-const Posts = (props) => {
-  const { data, error, isLoading, isEmpty } = usePosts(props.url)
+const Posts = () => {
+  const { data, error, isLoading, isEmpty } = usePosts()
 
   if (isLoading) {
     return <div>ローディング中</div>

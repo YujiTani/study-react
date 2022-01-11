@@ -1,8 +1,8 @@
-import { useComments } from '@/libs/utils/useFetchArray'
+import { CommentsByPostId } from '@/libs/utils/useFetchArray'
 import Link from 'next/link'
 
-export const CommentsComponent = () => {
-  const { data, error, isLoading, isEmpty } = useComments()
+export const CommentsByPostIdComponent = (props) => {
+  const { data, error, isLoading, isEmpty } = CommentsByPostId(props.id)
 
   if (isLoading) {
     return <div>ローディング中</div>
@@ -22,7 +22,8 @@ export const CommentsComponent = () => {
         return (
           <li key={Comment.id}>
             <Link href={`/comments/${Comment.id}`}>
-              <a>{`${Comment.name}（${Comment.email}）`}</a>
+              <a>{`#${Comment.id}
+              （${Comment.body}）`}</a>
             </Link>
           </li>
         )

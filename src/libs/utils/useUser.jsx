@@ -4,15 +4,15 @@ import useSWR from 'swr'
 
 export const useUser = () => {
   const router = useRouter()
-  const { data, error } = useSWR(
+  const { data: user, error } = useSWR(
     router.query.id
       ? `https://jsonplaceholder.typicode.com/users/${router.query.id}`
       : null,
     fetcher
   )
   return {
-    data,
+    user,
     error,
-    isLoading: !data && !error,
+    isLoading: !user && !error,
   }
 }

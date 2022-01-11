@@ -9,7 +9,7 @@ const Posts = () => {
         <title>Posts Page</title>
       </Head>
       <Header />
-      <PostsComponent url={'https://jsonplaceholder.typicode.com/posts'} />
+      <PostsComponent />
     </div>
   )
 }

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
 import { usePost } from '@/libs/utils/usePost'
+import { CommentsByPostIdComponent } from '@/components/Comment/CommentsByPostId'
 
 const PostsId = () => {
   const { post, user, error, isLoading } = usePost()
@@ -22,6 +23,7 @@ const PostsId = () => {
       <h1>{post?.title}</h1>
       <p>{post?.body}</p>
       {user?.name ? <p>{user.name}</p> : null}
+      <CommentsByPostIdComponent id={post.id} />
     </div>
   )
 }

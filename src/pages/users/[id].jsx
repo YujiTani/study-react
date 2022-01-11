@@ -1,9 +1,10 @@
 import { Header } from '@/components/Header'
 import Head from 'next/head'
 import { useUser } from '@/libs/utils/useUser'
+import { PostsByUserIdComponent } from '@/components/Post/PostsByUserId'
 
 const UserId = () => {
-  const { data, error, isLoading } = useUser()
+  const { user, error, isLoading } = useUser()
 
   if (isLoading) {
     return <div>ローディング中</div>
@@ -16,16 +17,17 @@ const UserId = () => {
   return (
     <div>
       <Head>
-        <title>{data?.name}</title>
+        <title>{user?.name}</title>
       </Head>
       <Header />
-      <h1>{data?.name}</h1>
-      <h2>{data?.address.city.toUpperCase()}</h2>
-      <p>{data?.username}</p>
-      <ol>
-        <li>{data?.company.name}</li>
-        <li>{data?.company.catchPhrase}</li>
-      </ol>
+      <h1>UserName:{user?.name}</h1>
+      <h2>City:{user?.address.city.toUpperCase()}</h2>
+      <ul>
+        <li>{user?.company.name}</li>
+        <li>{user?.company.catchPhrase}</li>
+      </ul>
+      <h1>記事紹介</h1>
+      <PostsByUserIdComponent id={user.id} />
     </div>
   )
 }

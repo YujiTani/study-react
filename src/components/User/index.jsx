@@ -1,4 +1,4 @@
-import { useUsers } from '@/libs/utils/useUsers'
+import { useUsers } from '@/libs/utils/useFetchArray'
 import Link from 'next/link'
 
 const UsersComponent = () => {

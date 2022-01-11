@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import { Header } from '@/components/Header'
 import { useComment } from '@/libs/utils/useComment'
+import { PostByPostIdComponent } from '@/components/Post/PostByPostId'
 
 const CommentId = () => {
-  const { data, error, isLoading } = useComment()
+  const { comment, error, isLoading } = useComment()
 
   if (isLoading) {
     return <div>ローディング中</div>
@@ -16,12 +17,13 @@ const CommentId = () => {
   return (
     <div>
       <Head>
-        <title>{data?.name}</title>
+        <title>{comment?.name}</title>
       </Head>
       <Header />
-      <h1>{data?.name}</h1>
-      <h3>{data?.email}</h3>
-      <p>{data?.body}</p>
+      <h1>{comment?.name}</h1>
+      <h3>{comment?.email}</h3>
+      <p>{comment?.body}</p>
+      <PostByPostIdComponent id={comment.postId} />
     </div>
   )
 }
