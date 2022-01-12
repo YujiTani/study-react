@@ -14,32 +14,35 @@ export const useFetchArray = (url) => {
 
 const API_URL = 'https://jsonplaceholder.typicode.com'
 
+// post
 export const usePosts = () => {
   return useFetchArray(`${API_URL}/posts`)
-}
-
-export const useUsers = () => {
-  return useFetchArray(`${API_URL}/users`)
-}
-
-export const useComments = () => {
-  return useFetchArray(`${API_URL}/comments`)
-}
-
-export const CommentsByPostId = (postId) => {
-  return useFetchArray(postId ? `${API_URL}/comments?postId=${postId}` : null)
 }
 
 export const PostByPostId = (postId) => {
   return useFetchArray(postId ? `${API_URL}/posts/${postId}` : null)
 }
 
+export const PostsByUserId = (userId) => {
+  return useFetchArray(userId ? `${API_URL}/posts?userId=${userId}` : null)
+}
+
+// user
+export const useUsers = () => {
+  return useFetchArray(`${API_URL}/users`)
+}
+
 export const UserByUserId = (userId) => {
   return useFetchArray(userId ? `${API_URL}/users/${userId}` : null)
 }
 
-export const PostsByUserId = (userId) => {
-  return useFetchArray(userId ? `${API_URL}/posts?userId=${userId}` : null)
+// comment
+export const useComments = () => {
+  return useFetchArray(`${API_URL}/comments`)
+}
+
+export const CommentsByPostId = (postId) => {
+  return useFetchArray(postId ? `${API_URL}/comments?postId=${postId}` : null)
 }
 
 export const CountCommentsByPostId = (postId) => {
