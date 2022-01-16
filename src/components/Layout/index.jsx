@@ -1,6 +1,3 @@
-import classes from '@/components/Layout/Layout.module.css'
-import { loadGetInitialProps } from 'next/dist/shared/lib/utils'
-
 export const Layout = (props) => {
-  return <div className={classes.container}>{props.children}</div>
+  return <div className='flex flex-col max-w-2xl mx-auto'>{props.children}</div>
 }
