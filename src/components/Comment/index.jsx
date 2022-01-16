@@ -17,12 +17,12 @@ export const CommentsComponent = () => {
   }
 
   return (
-    <ol>
+    <ol className='space-y-4'>
       {data?.map((Comment) => {
         return (
-          <li key={Comment.id}>
+          <li className='text-xl border-b pb-4 group' key={Comment.id}>
             <Link href={`/comments/${Comment.id}`}>
-              <a>{`${Comment.name}（${Comment.email}）`}</a>
+              <a className='group-hover:text-blue-400 '>{`${Comment.name}（${Comment.email}）`}</a>
             </Link>
           </li>
         )

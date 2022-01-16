@@ -17,7 +17,7 @@ export const CommentsByPostIdComponent = (props) => {
   }
 
   return (
-    <ol>
+    <ul>
       {data?.map((Comment) => {
         return (
           <li key={Comment.id}>
@@ -28,6 +28,6 @@ export const CommentsByPostIdComponent = (props) => {
           </li>
         )
       })}
-    </ol>
+    </ul>
   )
 }
