@@ -5,6 +5,7 @@ import { SWRConfig } from 'swr'
 
 const sleep = async(ms) => new Promise((resolve) => setTimeout(resolve , ms))
 
+// SSRの書き方
 // ServerSideProps
 // export const getServerSideProps = async() => {
 //   const COMMENTS_API_URL = "https://jsonplaceholder.typicode.com/comments"
@@ -12,6 +13,7 @@ const sleep = async(ms) => new Promise((resolve) => setTimeout(resolve , ms))
 //   const commentsData = await comments.json();
 //   await sleep(2000)
 
+// SGの書き方
   export const getStaticProps = async() => {
     const COMMENTS_API_URL = "https://jsonplaceholder.typicode.com/comments"
     const comments = await fetch(COMMENTS_API_URL)

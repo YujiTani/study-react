@@ -21,7 +21,8 @@ export const CommentsComponent = () => {
       {data?.map((Comment) => {
         return (
           <li className='text-xl border-b pb-4 group' key={Comment.id}>
-            <Link href={`/comments/${Comment.id}`}>
+            {/* prefetch={ false }にする事でホバー時に読み込みが走る */}
+            <Link href={`/comments/${Comment.id}`} prefetch={ false }>
               <a className='group-hover:text-blue-400 '>{`${Comment.name}（${Comment.email}）`}</a>
             </Link>
           </li>
